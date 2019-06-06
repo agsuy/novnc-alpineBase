@@ -1,0 +1,29 @@
+version: '2'
+services:
+  ide:
+    image: cypress/included:3.3.1
+#    image: psharkey/netbeans-8.1:latest
+    environment:
+      - DISPLAY=novnc:0.0
+    entrypoint: cypress open --project /e2e
+    depends_on:
+      - novnc
+    networks:
+      - x11
+    volumes:
+      - $PWD:/e2e
+    working_dir: /e2e
+  novnc:
+    image: theasp/novnc:latest
+    environment:
+      # Adjust to your screen size
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=1080
+      - RUN_XTERM=no
+    ports:
+      - "8080:8080"
+    networks:
+      - x11
+networks:
+  x11:
+
