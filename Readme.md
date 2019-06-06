@@ -1,3 +1,3 @@
 # Stub
 
-supervisord -c /app/supervisord.conf &
+supervisord -c /home/novnc/supervisor/supervisord.conf &
