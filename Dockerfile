@@ -16,7 +16,6 @@ RUN echo "http://dl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositorie
 # Install git, supervisor, VNC, & X11 packages
 RUN apk --update --upgrade add \
 	bash \
-	tinywm \
 	git \
 	socat \
 	supervisor \
